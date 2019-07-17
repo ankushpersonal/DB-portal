@@ -1,0 +1,60 @@
+
+
+<div class="container justify-content-center" *ngIf="loginView">
+  <div class="">
+    <h3>Login</h3>
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" name="email" class="form-control col-4" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Enter email" [(ngModel)]="loginForm.email">
+      <small id="emailHelp"  class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" name="password" class="form-control col-4" id="exampleInputPassword1" placeholder="Password" [(ngModel)]="loginForm.password">
+    </div>
+   
+      <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+      <button class="btn btn-secondary mx-2" (click)="viewToggle('true')">Sign up instead</button>
+  </form>
+</div>
+
+
+
+
+<div class="container justify-content-center" *ngIf="!loginView">
+    <div class="">
+      <h3>Sign up</h3>
+    </div>
+    <form>
+        <div class="form-row">
+          <div class="col-3">
+            <input type="text" name="firstname" class="form-control" placeholder="First name" [(ngModel)]="signupForm.firstName">
+          </div>
+          <div class="col-3">
+            <input type="text" name="lastname" class="form-control" placeholder="Last name" [(ngModel)]="signupForm.lastName">
+          </div>
+        </div>
+
+        <div class="form-row mt-3">
+            <div class="col-6">
+              <input type="text" name="email" class="form-control" placeholder="Email Address" [(ngModel)]="signupForm.email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+            </div>
+        </div>
+
+        <div class="form-row mt-3">
+          <div class="col-6">
+            <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="signupForm.password">
+        </div>
+      </div>
+        <div class="mt-3">
+        <button class="btn btn-primary" type="submit" (click)="signup()">Sign up</button>
+        <button class="btn btn-secondary mx-2" type="" (click)="viewToggle('false')">or, Login</button>      
+      </div>
+      </form>
+  </div>
+  
